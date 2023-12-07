@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1085985549026",
+    "project_id": "notication",
+    "storage_bucket": "notication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085985549026:android:716830b4efc57def380cbb",
+        "android_client_info": {
+          "package_name": "com.vanh.notifications"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2hmb71KS8ZxI4DU1jCGHmziC6PeBoVas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
