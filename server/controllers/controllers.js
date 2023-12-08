@@ -38,9 +38,10 @@ export const importProduct = (req, res) => {
         // formattedTime,
         // Boolean(req.body.is_error),
     ]
-    console.log('\n' +   req.body.user_name)
-    const query = 'INSERT INTO iot (user_name) VALUES (?)';
-    db.query(query, [values], (err, result) => {
+    console.log('\n' +   req.body.userName)
+    
+    const query = 'INSERT INTO iot (`user_name`) VALUES (?)';
+    db.query(query, "iot", (err, result) => {
         if (err) return res.status(500).json({ Error: "loi khi dang ky" });
         return res.status(200).json({ Status: "Success" });
     })
