@@ -36,8 +36,11 @@ redisClient.on('message', (channel, message) => {
   }
 });
 wss.on('connection', function connection(ws) {
+  console.log("connect thanh cong")
   ws.on('message', function incoming(message) {
+    console.log("in ra mes" + message);
     if (message === 'getData') {
+      console.log("da vao day!");
       db.query('SELECT * FROM iot', (err, results) => {
         if (err) {
           throw err;
@@ -46,6 +49,12 @@ wss.on('connection', function connection(ws) {
       });
     }
   });
+  db.query('SELECT * FROM iot', (err, results) => {
+    if (err) {
+      throw err;
+    }
+    ws.send(JSON.stringify(results));
+  })
 });
 // const server = http.createServer(app);
 // Thiết lập Content-Type cho response
@@ -83,9 +92,9 @@ app.post("/send", function (req, res) {
       body: 'Số lượng vật phẩm lỗi đã quá giới hạn cho phép.'
     },
     // token vs5
-    // token: "cSwStbQQTJSTSmZLsWFrC9:APA91bHsmXwkp8suS56yTbXoanwnZ5C14qXUoLt-CjKPIJxoRY7nEMhDnO9iMP_1xzCApRtItwA7UceO5OBEXFq5itOW6LdbH70cJPWyM75XW5i1ENzfhRaWZOCBo0fKRXD4OZQ2CfpX",
+    token: "cSwStbQQTJSTSmZLsWFrC9:APA91bHsmXwkp8suS56yTbXoanwnZ5C14qXUoLt-CjKPIJxoRY7nEMhDnO9iMP_1xzCApRtItwA7UceO5OBEXFq5itOW6LdbH70cJPWyM75XW5i1ENzfhRaWZOCBo0fKRXD4OZQ2CfpX",
     // token mobile start5
-    token: "dQu21wVlT7eXFjh0Q-cjfu:APA91bE9c9j6_Nlnfi1wPpNV1TYEqzc25rroB21AkcEMqZMdxZB2hQYu1mw1-EjZtgQHG0NmG8k-4D2twQqm4km2O7DvpKg5POXrS5PUciGh1gpzj2wmy1tjeP8flVs3RzfzRESr7sb9",
+    // token: "dQu21wVlT7eXFjh0Q-cjfu:APA91bE9c9j6_Nlnfi1wPpNV1TYEqzc25rroB21AkcEMqZMdxZB2hQYu1mw1-EjZtgQHG0NmG8k-4D2twQqm4km2O7DvpKg5POXrS5PUciGh1gpzj2wmy1tjeP8flVs3RzfzRESr7sb9",
   };
 
   // Gửi thông báo

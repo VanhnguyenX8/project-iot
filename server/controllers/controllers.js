@@ -16,7 +16,7 @@ export const allProduct = (req, res) => {
     db.query(sql, (err, data) => {
         if (err) return res.status(404).json({ Error: "SQL eror" });
         if (data.length > 0) {
-            return res.status(200).json(data);
+            return res.status(200).json({ status: "SUCCESS", message :"Loaded product",data});
 
         } else {
             return res.status(404).json({ Error: "Data empty" });
