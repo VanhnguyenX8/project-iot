@@ -55,8 +55,6 @@ dependencies:
   firebase_app_installations: ^0.2.2+1
 
   ### Ads
-  google_mobile_ads: ^3.0.0 # Android, IoS only
-  advertising_id: ^2.4.0
   firebase_messaging: ^14.7.6
 dev_dependencies:
   flutter_test:

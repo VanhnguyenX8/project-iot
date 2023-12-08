@@ -10,6 +10,8 @@ class EmptyPage extends StatefulWidget {
 class _EmptyPageState extends State<EmptyPage> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Center(
+      child: Text("notifi"),
+    );
   }
 }
